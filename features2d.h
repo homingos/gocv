@@ -51,7 +51,7 @@ void BRISK_Close(BRISK b);
 struct KeyPoints BRISK_Detect(BRISK b, Mat src);
 struct KeyPoints BRISK_Compute(BRISK b, Mat src, struct KeyPoints kp, Mat desc);
 struct KeyPoints BRISK_DetectAndCompute(BRISK b, Mat src, Mat mask, Mat desc);
-
+struct BRISK BRISK_CreateWithParams(int thresh, int octaves, float patternScale);
 FastFeatureDetector FastFeatureDetector_Create();
 FastFeatureDetector FastFeatureDetector_CreateWithParams(int threshold, bool nonmaxSuppression, int type);
 void FastFeatureDetector_Close(FastFeatureDetector f);

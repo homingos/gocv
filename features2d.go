@@ -152,6 +152,10 @@ func NewBRISK() BRISK {
 	return BRISK{p: unsafe.Pointer(C.BRISK_Create())}
 }
 
+func NewBRISKWithParams(thresh int, octaves int, patternScale float32) BRISK {
+	return BRISK{p: unsafe.Pointer(C.BRISK_CreateWithParams(C.int(thresh), C.int(octaves), C.float(patternScale)))}
+}
+
 // Close BRISK.
 func (b *BRISK) Close() error {
 	C.BRISK_Close((C.BRISK)(b.p))
